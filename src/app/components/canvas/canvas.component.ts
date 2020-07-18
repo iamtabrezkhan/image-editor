@@ -37,6 +37,7 @@ export class CanvasComponent implements OnInit, OnDestroy {
       'drop',
       this.onDropImage.bind(this)
     );
+    this.canvasContainer.removeEventListener('keyup', this.onKeyUp.bind(this));
   }
 
   initCanvas(width, height) {
