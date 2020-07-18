@@ -1,0 +1,19 @@
+<div
+  class="main"
+  infiniteScroll
+  [infiniteScrollDistance]="0.5"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="getNextPageImages()"
+  [scrollWindow]="false"
+>
+  <div class="container">
+    <div *ngFor="let column of columns; let i = index" class="column">
+      <div *ngFor="let image of columnItems[i]" class="imageContainer">
+        <img
+          src="{{ image.download_url }}"
+          (dragstart)="onImageDragStart($event, image.download_url)"
+        />
+      </div>
+    </div>
+  </div>
+</div>

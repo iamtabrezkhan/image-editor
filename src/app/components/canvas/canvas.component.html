@@ -1,0 +1,37 @@
+<div class="main">
+  <div class="toolbar">
+    <div class="text btn" (click)="onTextClick($event)" title="Add text">
+      <i class="fas fa-font"></i>
+    </div>
+    <div class="delete btn" (click)="onDelete($event)" title="Delete">
+      <i class="fas fa-trash-alt"></i>
+    </div>
+    <div class="up btn" (click)="onBringForward($event)" title="Bring forward">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+    <div
+      class="down btn"
+      (click)="onPushBackward($event)"
+      title="Push backward"
+    >
+      <i class="fas fa-arrow-down"></i>
+    </div>
+    <select [value]="selectedSize" (change)="onSizeSelect($event)">
+      <option *ngFor="let size of sizes" [value]="size.ratio">{{
+        size.ratio
+      }}</option>
+    </select>
+    <div class="save btn" (click)="onDownload($event)" title="Download">
+      <i class="fas fa-download"></i>
+    </div>
+    <a href="" style="display: none;" #downloadBtn></a>
+  </div>
+  <div class="canvas-wrapper" #canvasWrapper>
+    <canvas
+      (drop)="onDropImage($event)"
+      (dragover)="onDragOver($event)"
+      id="my-canvas"
+      #canvasEl
+    ></canvas>
+  </div>
+</div>
