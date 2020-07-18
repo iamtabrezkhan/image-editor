@@ -40,3 +40,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 - Change text color
 - Change text font
 - Change font size
+- Update canvas size on window resize
