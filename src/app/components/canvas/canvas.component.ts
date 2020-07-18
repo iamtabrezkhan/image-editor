@@ -105,7 +105,6 @@ export class CanvasComponent implements OnInit, OnDestroy {
     const imgEl = new Image();
     imgEl.crossOrigin = 'anonymous';
     imgEl.onload = function (e) {
-      console.log('image loaded');
       this.addNewImage(imgEl);
       if (!this.hasBackgroundImage()) {
         // set background with blurred image
@@ -165,7 +164,6 @@ export class CanvasComponent implements OnInit, OnDestroy {
     if ((fabric as any).isWebglSupported()) {
       fabric.textureSize = Math.max(bgImg.width, bgImg.height);
     }
-    console.log(fabric.textureSize);
     bgImg.filters.push(blurFilter);
     bgImg.applyFilters();
     this.centerBackgroundImage(bgImg);
